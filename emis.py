@@ -73,10 +73,7 @@ class EMIS(requests.Session):
                 f'EMIS_STATUS_{date}.pdf'
             )
         pdf_writer = open(
-            os.path.join(
-                save_dir or '',
-                f'EMIS_STATUS_{date}.pdf'
-            ),
+            self.pdf_path,
             'wb'
         )
         pdf_writer.write(self.raw_pdf)
